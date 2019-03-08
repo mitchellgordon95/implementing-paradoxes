@@ -4,10 +4,6 @@ def softmax(X):
     summation = sum(exponents)
     return [x / summation for x in exponents]
 
-# We were wrong
-print softmax([100, 200])
-print
-
 # Conjecture: softmax is invariant under addition of a constant
 # softmax(x) = softmax(x + c)
 print softmax([1, 2])
