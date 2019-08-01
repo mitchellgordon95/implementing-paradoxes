@@ -6,17 +6,17 @@ def softmax(X):
 
 # Conjecture: softmax is invariant under addition of a constant
 # softmax(x) = softmax(x + c)
-print softmax([1, 2])
-print softmax([101, 102])
-print softmax([.1, 1.1])
-print softmax([-1, 0])
-print
-print softmax([1, 3])
-print softmax([101, 103])
-print
-print softmax([1, 2, 3])
-print softmax([101, 102, 103])
-print 
+print(softmax([1, 2]))
+print(softmax([101, 102]))
+print(softmax([.1, 1.1]))
+print(softmax([-1, 0]))
+print()
+print(softmax([1, 3]))
+print(softmax([101, 103]))
+print()
+print(softmax([1, 2, 3]))
+print(softmax([101, 102, 103]))
+print()
 # In other words, the only thing that matters to softmax is the difference
 # between the values, not the values themselves.
 
@@ -32,6 +32,6 @@ print
 # However, if your X values are around 100, then a difference of 1 seems small. My guess is that in the paper,
 # the high values of X were accompanied by a high variance. So, they'd have something like 100 vs. 107, which maxes out softmax
 # and results in no gradient.
-print "It only takes an difference of 7 to basically max out softmax, no matter the scale of the inputs"
-print softmax([100, 107])
-print softmax([0, 7])
+print("It only takes an difference of 7 to basically max out softmax, no matter the scale of the inputs")
+print(softmax([100, 107]))
+print(softmax([0, 7]))
