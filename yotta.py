@@ -33,16 +33,16 @@ def experiment(dollars, weeks, trials=10000, compounding=False):
     fig, axes = plt.subplots()
 
     axes.set_xlabel("Money Won")
-    axes.set_ylabel("Count")
+    axes.set_ylabel("# People")
 
     winnings = []
     for i in range(trials):
         winnings.append(invest(dollars, weeks, compounding=compounding))
 
-    axes.hist(winnings, 100, density=True)
+    axes.hist(winnings, 100)
 
-    axes.set_title("Yotta Ball Results")
+    axes.set_title(f"Invest ${int(dollars / 1000)}k For One Year")
     fig.savefig(f'yotta_{dollars}_{weeks}_{trials}_{compounding}.png')
 
-experiment(10000, 52, compounding=True)
+experiment(1000, 52, compounding=False)
 plt.show()
